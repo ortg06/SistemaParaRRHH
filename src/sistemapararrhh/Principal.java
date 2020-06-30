@@ -8,6 +8,7 @@ package sistemapararrhh;
 import java.util.logging.Logger;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import sistemarrhh.connections.ConnectionDB;
 
 /**
  *
@@ -26,8 +27,7 @@ public class Principal {
     public static void main(String[] args) {
         // TODO code application logic here
         try {
-            Class.forName(DRIVER);
-            Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
+            Connection con = ConnectionDB.openConnection();
             log.info("Se ha realizado la conexion a la BD");
 
         } catch (Exception ex) {
