@@ -28,6 +28,7 @@ public class Principal {
         // TODO code application logic here
         try {
             Connection con = ConnectionDB.openConnection();
+          
             log.info("Se ha realizado la conexion a la BD");
 
         } catch (Exception ex) {
