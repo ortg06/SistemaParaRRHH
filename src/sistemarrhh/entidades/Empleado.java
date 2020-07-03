@@ -15,7 +15,7 @@ public class Empleado {
 
     private int noEmpleado;
     private String nombre;
-    private String apellido;
+    private String apellidos;
     private Date fechaNacimiento;
     private Date fechaContrato;
     private int dpID;
@@ -29,7 +29,7 @@ public class Empleado {
     public Empleado(int noEmpleado, String nombre, String apellido, Date fechaNacimiento, Date fechaContrato, int dpID, int superior, int tpID, int stId) {
         this.noEmpleado = noEmpleado;
         this.nombre = nombre;
-        this.apellido = apellido;
+        this.apellidos = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.fechaContrato = fechaContrato;
         this.dpID = dpID;
@@ -41,7 +41,7 @@ public class Empleado {
     public Empleado(int noEmpleado, String nombre, String apellido, Date fechaNacimiento, Date fechaContrato, int dpID, int tpID, int stId) {
         this.noEmpleado = noEmpleado;
         this.nombre = nombre;
-        this.apellido = apellido;
+        this.apellidos = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.fechaContrato = fechaContrato;
         this.dpID = dpID;
@@ -66,11 +66,11 @@ public class Empleado {
     }
 
     public String getApellido() {
-        return apellido;
+        return apellidos;
     }
 
     public void setApellido(String apellido) {
-        this.apellido = apellido;
+        this.apellidos = apellido;
     }
 
     public Date getFechaNacimiento() {
@@ -120,10 +120,10 @@ public class Empleado {
     public void setStId(int stId) {
         this.stId = stId;
     }
-    
-    
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Empleado{" + "noEmpleado=" + noEmpleado + ", nombre=" + nombre + ", apellidos=" + apellidos + ", fechaNacimiento=" + fechaNacimiento + ", fechaContrato=" + fechaContrato + ", dpID=" + dpID + ", superior=" + superior + ", tpID=" + tpID + ", stId=" + stId + '}';
+    }
 
 }

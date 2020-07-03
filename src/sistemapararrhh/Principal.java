@@ -14,6 +14,7 @@ import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
 import sistemarrhh.connections.ConnectionDB;
+import sistemarrhh.dao.EmpleadoDao;
 import sistemarrhh.entidades.Empleado;
 
 /**
@@ -23,31 +24,26 @@ import sistemarrhh.entidades.Empleado;
 public class Principal {
 
     private static Logger log = Logger.getLogger(Principal.class.getName());
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
         try {
-            Connection con = ConnectionDB.openConnection();
-            log.info("Se ha realizado la conexion a la BD");
-            
-            PreparedStatement ps = con.prepareStatement("select EM_NOMBRE from GE_EM_EMPLEADO");
-            ResultSet rs = ps.executeQuery();
-            log.info("Obteniendo informacion");
-           
-            while(rs.next()){
-                //List<Empleado> empleados = new ArrayList();
-               
-                System.out.println("Nombre Empleado:"+rs.getString("EM_NOMBRE"));
+            EmpleadoDao empleadoDao = new EmpleadoDao();
+            List<Empleado> empleados = empleadoDao.getAllData();
+            for(Empleado e: empleados){
+               log.info(e.toString());
             }
-            //cerrando objetos y conexion
-            log.info("Cerrando conexion");
-            rs.close();
-            ps.close();
-            con.close();
             
-          
+            log.info("Obteniendo empleado con ID: 1");
+            Empleado e = empleadoDao.getByIdData(1);
+            
+            log.info("El nombre actual es: "+e.getNombre());
+            e.setNombre("Oscar");
+            empleadoDao.updateData(e);
+            
             
         } catch (Exception ex) {
             ex.printStackTrace();
