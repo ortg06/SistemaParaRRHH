@@ -11,7 +11,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.DriverManager;
+import java.util.ArrayList;
+import java.util.List;
 import sistemarrhh.connections.ConnectionDB;
+import sistemarrhh.entidades.Empleado;
 
 /**
  *
@@ -29,11 +32,13 @@ public class Principal {
             Connection con = ConnectionDB.openConnection();
             log.info("Se ha realizado la conexion a la BD");
             
-            PreparedStatement ps = con.prepareStatement("select * from GE_EM_EMPLEADO");
+            PreparedStatement ps = con.prepareStatement("select EM_NOMBRE from GE_EM_EMPLEADO");
             ResultSet rs = ps.executeQuery();
             log.info("Obteniendo informacion");
            
             while(rs.next()){
+                //List<Empleado> empleados = new ArrayList();
+               
                 System.out.println("Nombre Empleado:"+rs.getString("EM_NOMBRE"));
             }
             //cerrando objetos y conexion
