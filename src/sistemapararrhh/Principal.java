@@ -5,17 +5,11 @@
  */
 package sistemapararrhh;
 
-import com.mysql.cj.jdbc.PreparedStatementWrapper;
+
 import static java.lang.System.exit;
 import java.util.logging.Logger;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.DriverManager;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import sistemarrhh.connections.ConnectionDB;
 import sistemarrhh.dao.EmpleadoDao;
 import sistemarrhh.entidades.Empleado;
 
@@ -25,7 +19,7 @@ import sistemarrhh.entidades.Empleado;
  */
 public class Principal {
 
-    private static Logger log = Logger.getLogger(Principal.class.getName());
+    private static final Logger log = Logger.getLogger(Principal.class.getName());
 
     /**
      * @param args the command line arguments
@@ -79,7 +73,7 @@ public class Principal {
                     try{
                         System.out.println("\nDigite el ID del empleado a buscar: ");
                         int buscarPor = Integer.parseInt(sc.nextLine());
-                        System.out.println("Obteniendo empleado con ID: 1...");
+                        System.out.println("Obteniendo empleado con ID:"+buscarPor);
                         Empleado e = empleadoDao.getByIdData(buscarPor);
                         if(e == null){
                             System.out.println("El ID no se encuentra en nuestros registros");
