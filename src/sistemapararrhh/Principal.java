@@ -7,11 +7,14 @@ package sistemapararrhh;
 
 
 import static java.lang.System.exit;
+import java.sql.SQLException;
 import java.util.logging.Logger;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
 import sistemarrhh.dao.EmpleadoDao;
 import sistemarrhh.entidades.Empleado;
+import sistemarrhh.utilidades.RegistroEmpleado;
 
 /**
  *
@@ -74,7 +77,8 @@ public class Principal {
                         System.out.println("\nDigite el ID del empleado a buscar: ");
                         int buscarPor = Integer.parseInt(sc.nextLine());
                         System.out.println("Obteniendo empleado con ID:"+buscarPor);
-                        Empleado e = empleadoDao.getByIdData(buscarPor);
+                        Empleado e = empleadoDao.getByIDData(buscarPor);
+                                
                         if(e == null){
                             System.out.println("El ID no se encuentra en nuestros registros");
                         }else{
@@ -85,8 +89,18 @@ public class Principal {
                     }
                     break;
                 case 3:
-                    
+                    RegistroEmpleado registro = new RegistroEmpleado();
+                {
+                    try {
+                        registro.Registro();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (ClassNotFoundException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
                     break;
+
                 case 4:
                     System.out.println("Adios...");
                     exit(0); //Se termina la sesion del sistema

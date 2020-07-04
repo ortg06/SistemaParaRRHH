@@ -15,9 +15,13 @@ public class Empleado {
 
     private int noEmpleado;
     private String nombre;
-    private String apellidos;
+    private String apellido;
     private Date fechaNacimiento;
     private Date fechaContrato;
+    private String usuarioModifica;
+    private String usuarioCreacion;
+    private Date fechaCreacion;
+    private Date fechaModificacion;
     private int dpID;
     private int superior;
     private int tpID;
@@ -29,7 +33,7 @@ public class Empleado {
     public Empleado(int noEmpleado, String nombre, String apellido, Date fechaNacimiento, Date fechaContrato, int dpID, int superior, int tpID, int stId) {
         this.noEmpleado = noEmpleado;
         this.nombre = nombre;
-        this.apellidos = apellido;
+        this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.fechaContrato = fechaContrato;
         this.dpID = dpID;
@@ -38,13 +42,18 @@ public class Empleado {
         this.stId = stId;
     }
 
-    public Empleado(int noEmpleado, String nombre, String apellido, Date fechaNacimiento, Date fechaContrato, int dpID, int tpID, int stId) {
+    public Empleado(int noEmpleado, String nombre, String apellido, Date fechaNacimiento, Date fechaContrato, String usuarioModifica, String usuarioCreacion, Date fechaCreacion, Date fechaModificacion, int dpID, int superior, int tpID, int stId) {
         this.noEmpleado = noEmpleado;
         this.nombre = nombre;
-        this.apellidos = apellido;
+        this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.fechaContrato = fechaContrato;
+        this.usuarioModifica = usuarioModifica;
+        this.usuarioCreacion = usuarioCreacion;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaModificacion = fechaModificacion;
         this.dpID = dpID;
+        this.superior = superior;
         this.tpID = tpID;
         this.stId = stId;
     }
@@ -66,11 +75,11 @@ public class Empleado {
     }
 
     public String getApellido() {
-        return apellidos;
+        return apellido;
     }
 
     public void setApellido(String apellido) {
-        this.apellidos = apellido;
+        this.apellido = apellido;
     }
 
     public Date getFechaNacimiento() {
@@ -87,6 +96,38 @@ public class Empleado {
 
     public void setFechaContrato(Date fechaContrato) {
         this.fechaContrato = fechaContrato;
+    }
+
+    public String getUsuarioModifica() {
+        return usuarioModifica;
+    }
+
+    public void setUsuarioModifica(String usuarioModifica) {
+        this.usuarioModifica = usuarioModifica;
+    }
+
+    public String getUsuarioCreacion() {
+        return usuarioCreacion;
+    }
+
+    public void setUsuarioCreacion(String usuarioCreacion) {
+        this.usuarioCreacion = usuarioCreacion;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public Date getFechaModificacion() {
+        return fechaModificacion;
+    }
+
+    public void setFechaModificacion(Date fechaModificacion) {
+        this.fechaModificacion = fechaModificacion;
     }
 
     public int getDpID() {
@@ -123,7 +164,7 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" + "noEmpleado=" + noEmpleado + ", nombre=" + nombre + ", apellidos=" + apellidos + ", fechaNacimiento=" + fechaNacimiento + ", fechaContrato=" + fechaContrato + ", dpID=" + dpID + ", superior=" + superior + ", tpID=" + tpID + ", stId=" + stId + '}';
+        return "Empleado{" + "noEmpleado=" + noEmpleado + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento + ", fechaContrato=" + fechaContrato + ", usuarioModifica=" + usuarioModifica + ", usuarioCreacion=" + usuarioCreacion + ", fechaCreacion=" + fechaCreacion + ", fechaModificacion=" + fechaModificacion + ", dpID=" + dpID + ", superior=" + superior + ", tpID=" + tpID + ", stId=" + stId + '}';
     }
 
 }
