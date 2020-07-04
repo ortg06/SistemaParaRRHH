@@ -13,6 +13,7 @@ import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
+import sistemarrhh.entidades.Usuario;
 
 import sistemarrhh.propiedades.ConfigProperties;
 
@@ -22,9 +23,9 @@ import sistemarrhh.propiedades.ConfigProperties;
  */
 public class EnviarCorreo {  
 
-    //Descomentar cuando ya se tenga la entidad USUARIO.
     
-   /* private Usuario user;
+    
+    private Usuario user;
     private Properties propiedades;
     private final String NOMBRE_ARCHIVO_PROPS="config.properties";
 
@@ -50,12 +51,12 @@ public class EnviarCorreo {
             email.setFrom(encriptacionTexto.getTextoDesencriptado(propiedades.getProperty("srEmF")));
             email.setSubject("Codigo de verificación");
             email.setMsg("Este es tu codigo :"+num);
-            email.addTo(user.getCorreo());
+            email.addTo(user.getUsCorreo());
             email.send();
         } catch (EmailException ex) {
             Logger.getLogger(EnviarCorreo.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }*/
+    }
 
 }
