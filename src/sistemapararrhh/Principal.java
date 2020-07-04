@@ -14,6 +14,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import sistemarrhh.dao.EmpleadoDao;
 import sistemarrhh.entidades.Empleado;
+import sistemarrhh.utilidades.BuscarEmpleado;
 import sistemarrhh.utilidades.RegistroEmpleado;
 
 /**
@@ -73,20 +74,8 @@ public class Principal {
                     }
                     break;
                 case 2:
-                    try{
-                        System.out.println("\nDigite el ID del empleado a buscar: ");
-                        int buscarPor = Integer.parseInt(sc.nextLine());
-                        System.out.println("Obteniendo empleado con ID:"+buscarPor);
-                        Empleado e = empleadoDao.getByIDData(buscarPor);
-                                
-                        if(e == null){
-                            System.out.println("El ID no se encuentra en nuestros registros");
-                        }else{
-                        System.out.println(e);
-                        }
-                    }catch (Exception ex) {
-                        ex.printStackTrace();
-                    }
+                    BuscarEmpleado bEmpleado = new BuscarEmpleado();
+                    bEmpleado.AccionEmpleado();
                     break;
                 case 3:
                     RegistroEmpleado registro = new RegistroEmpleado();

@@ -23,13 +23,15 @@ public class RegistroEmpleado {
 
     public void Registro() throws SQLException, ClassNotFoundException {
 
+        //Se instancia las clases que ocuparemos
         EmpleadoDao empleadoDao = new EmpleadoDao();
         Scanner sc = new Scanner(System.in);
-        //Creando un empleado
         GregorianCalendar fn = new GregorianCalendar();
         GregorianCalendar fc = new GregorianCalendar();
         GregorianCalendar gc = new GregorianCalendar();
 
+        
+        //Creando un empleado
         System.out.println("---Formulario de nuevo empleado-----");
         System.out.println("\nCodigo de Empleado:");
         int codigo = Integer.parseInt(sc.nextLine());
