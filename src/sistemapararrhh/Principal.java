@@ -14,7 +14,10 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import sistemarrhh.dao.EmpleadoDao;
 import sistemarrhh.entidades.Empleado;
+import sistemarrhh.entidades.Usuario;
 import sistemarrhh.utilidades.BuscarEmpleado;
+import sistemarrhh.utilidades.CargoForm;
+import sistemarrhh.utilidades.DepartamentoForm;
 import sistemarrhh.utilidades.RegistroEmpleado;
 
 /**
@@ -33,6 +36,16 @@ public class Principal {
         Scanner sc = new Scanner(System.in);
         byte decision = 0;
         EmpleadoDao empleadoDao = new EmpleadoDao();
+        Usuario user = new Usuario();
+        
+        
+        System.out.println("\nInicio de Sesión.");//Muestra Inicio de Sesion Usuario- COntraseña
+        System.out.println("\nIngrese codigo de Usuario: ");
+        user.setUsID(Integer.parseInt(sc.nextLine()));
+        System.out.println("\nContraseña: ");
+        user.(sc.nextLine());
+        user.setCorreo(CORREO);
+        
 
         System.out.println("\n-----BIENVENIDO AL SISTEMA DE RECURSOS HUMANOS-----\n");
 
@@ -45,15 +58,20 @@ public class Principal {
             System.out.println("1. Consultar todos los empleados.");
             System.out.println("2. Consultar informacion de un empleado");
             System.out.println("3. Ingresar un nuevo empleado");
-            System.out.println("4. Salir");
+            System.out.println("4. Gestion de Departamentos");
+            System.out.println("5. Gestion de Cargos");
+            System.out.println("6. Salir");
             decision2 = Byte.parseByte(sc.nextLine());
 
-            while (decision2 != 1 && decision2 != 2 && decision2 != 3 && decision2 != 4) { //Validamos que el usuario seleccione una opcion valida (1 o 2)
+            while (decision2 != 1 && decision2 != 2 && decision2 != 3 && decision2 != 4
+                    && decision2 != 5 && decision2 != 6) { //Validamos que el usuario seleccione una opcion valida (1 o 2)
                 System.out.println("\nERROR: SELECCIONE UNA OPCION CORRECTA\n");
                 System.out.println("1. Consultar todos los empleados.");
                 System.out.println("2. Consultar informacion de un empleado");
                 System.out.println("3. Ingresar un nuevo empleado");
-                System.out.println("4. Salir");
+                System.out.println("4. Gestion de departamentos");
+                System.out.println("5. GEstion de Cargos");
+                System.out.println("6. Salir");
                 decision = Byte.parseByte(sc.nextLine());
             }
 
@@ -89,8 +107,33 @@ public class Principal {
                     }
                 }
                     break;
-
-                case 4:
+                    
+                case 4:  
+                    DepartamentoForm nuevoDepto = new DepartamentoForm();
+                {
+                    try {
+                        nuevoDepto.nuevoDepto();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (ClassNotFoundException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                    break;
+                case 5:
+                    CargoForm gestionCargo = new CargoForm();
+                {
+                    try {
+                        gestionCargo.nuevoCargo();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (ClassNotFoundException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                    break;    
+    
+                case 6:
                     System.out.println("Adios...");
                     exit(0); //Se termina la sesion del sistema
                     break;

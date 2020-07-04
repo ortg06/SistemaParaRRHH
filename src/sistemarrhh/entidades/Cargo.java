@@ -9,19 +9,30 @@ package sistemarrhh.entidades;
  *
  * @author ortg_
  */
-public class Cargos {
+public class Cargo {
     
-    private int dpID;
+    private int caID;
     private String caNombre;
+    private int dpID;
 
-    public Cargos() {
+    public Cargo() {
     }
 
-    public Cargos(int dpID, String caNombre) {
-        this.dpID = dpID;
+    public Cargo(int caID, String caNombre, int dpID) {
+        this.caID = caID;
         this.caNombre = caNombre;
+        this.dpID = dpID;
     }
 
+    public int getCaID() {
+        return caID;
+    }
+
+    public void setCaID(int caID) {
+        this.caID = caID;
+    }
+
+    
     public int getDpID() {
         return dpID;
     }
@@ -40,8 +51,6 @@ public class Cargos {
 
     @Override
     public String toString() {
-        return "Cargos{" + "dpID=" + dpID + ", caNombre=" + caNombre + '}';
+        return "Cargo{" + "caID=" + caID + ", dpID=" + dpID + ", caNombre=" + caNombre + '}';
     }
-    
-    
 }

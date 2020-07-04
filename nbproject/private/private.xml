@@ -5,14 +5,11 @@
         <group>
             <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemarrhh/entidades/Empleado.java</file>
             <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemarrhh/entidades/Departamento.java</file>
-            <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemarrhh/entidades/Descuentos.java</file>
+            <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemarrhh/dao/AbstractDao.java</file>
             <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemapararrhh/Principal.java</file>
-            <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemarrhh/entidades/Planilla.java</file>
-            <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemarrhh/connections/ConnectionDB.java</file>
-            <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemarrhh/entidades/Cargos.java</file>
-            <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemarrhh/entidades/TipoEmpleo.java</file>
-            <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemarrhh/entidades/Salario.java</file>
-            <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemarrhh/entidades/EstatusEmpleado.java</file>
+            <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemarrhh/utilidades/BuscarEmpleado.java</file>
+            <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemarrhh/utilidades/RegistroEmpleado.java</file>
+            <file>file:/C:/Users/ortg_/Documents/NetBeansProjects/SistemaParaRRHH/src/sistemarrhh/dao/EmpleadoDao.java</file>
         </group>
     </open-files>
 </project-private>

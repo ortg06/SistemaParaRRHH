@@ -164,7 +164,12 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" + "noEmpleado=" + noEmpleado + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento + ", fechaContrato=" + fechaContrato + ", usuarioModifica=" + usuarioModifica + ", usuarioCreacion=" + usuarioCreacion + ", fechaCreacion=" + fechaCreacion + ", fechaModificacion=" + fechaModificacion + ", dpID=" + dpID + ", superior=" + superior + ", tpID=" + tpID + ", stId=" + stId + '}';
+        return "Empleado{" + "noEmpleado=" + noEmpleado + ", nombre=" + nombre 
+                + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento 
+                + ", fechaContrato=" + fechaContrato + ", usuarioModifica=" + usuarioModifica 
+                + ", usuarioCreacion=" + usuarioCreacion + ", fechaCreacion=" + fechaCreacion 
+                + ", fechaModificacion=" + fechaModificacion + ", dpID=" + dpID + ", superior=" 
+                + superior + ", tpID=" + tpID + ", stId=" + stId + '}';
     }
 
 }

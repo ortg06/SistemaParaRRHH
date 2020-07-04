@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 import sistemarrhh.entidades.Empleado;
-import java.util.logging.Logger;
 import sistemarrhh.dao.EmpleadoDao;
 
 /**
@@ -19,7 +18,7 @@ import sistemarrhh.dao.EmpleadoDao;
  */
 public class RegistroEmpleado {
 
-    private static Logger log = Logger.getLogger(RegistroEmpleado.class.getName());
+  
 
     public void Registro() throws SQLException, ClassNotFoundException {
 
@@ -61,11 +60,13 @@ public class RegistroEmpleado {
         int codPuesto = Integer.parseInt(sc.nextLine());
         System.out.println("\nEstatus:");
         int codEstatus = Integer.parseInt(sc.nextLine());
-
+        
+        //Insertamos el nuevo empleado en un nuevo objeto con cada parametro ingresado.
         Empleado nuevo = new Empleado(codigo, nombre, apellido, new Date(fn.getTimeInMillis()), new Date(fc.getTimeInMillis()),
-                 "Usuario", " ", new Date(gc.getTimeInMillis()), new Date(new GregorianCalendar().getTimeInMillis()), codSuperior, codDepto, codPuesto, codEstatus);
-        System.out.println("Creando el empleado " + nuevo);
-        empleadoDao.insertData(nuevo);
+                 "Usuario", " ", new Date(gc.getTimeInMillis()), new Date(new GregorianCalendar().getTimeInMillis()), 
+                codSuperior, codDepto, codPuesto, codEstatus);
+        System.out.println("Creando el empleado " + nuevo.getNombre()+nuevo.getApellido());
+        empleadoDao.insertData(nuevo); //Se eejecuta el metodo insert que ejecuta el sql
         System.out.println("Empleado" + nuevo.getNombre() + nuevo.getApellido() + " creado exitosamente");
     }
 
