@@ -55,8 +55,9 @@ public class Administrador {
 
             switch (decision2) { //Switch que controla el acceso a las opciones del menu
                 case 1:
-                    
+                
                     break;
+
                 case 2:
                     
                     break;

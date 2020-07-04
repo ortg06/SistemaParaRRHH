@@ -11,6 +11,8 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import sistemarrhh.utilidades.DepartamentoForm;
+import sistemarrhh.utilidades.GestionEmpleado;
+import sistemarrhh.utilidades.RegistroEmpleado;
 
 /**
  *
@@ -50,17 +52,28 @@ public class RecursosHumano {
 
             switch (decision2) { //Switch que controla el acceso a las opciones del menu
                 case 1:
-
+                    //Instanciamos clase para el registro de empleado
+                    RegistroEmpleado rEmpleado = new RegistroEmpleado();
+                     {
+                        try {
+                            rEmpleado.Registro();
+                        } catch (SQLException ex) {
+                            Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (ClassNotFoundException ex) {
+                            Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
                     break;
                 case 2:
-
+                    GestionEmpleado gEmpleado = new GestionEmpleado();
+                    gEmpleado.gestionEmpleado();
                     break;
                 case 3:
 
                     break;
 
                 case 4:
-                    
+
                     break;
                 case 5:
                     System.out.println("Adios...");

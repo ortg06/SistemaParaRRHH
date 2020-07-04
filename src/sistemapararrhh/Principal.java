@@ -88,8 +88,8 @@ public class Principal {
              admon.gestionAdmon();
         } else if (user2.getRolID() == 2) {
              System.out.println("\n--Usted posee un rol de Recursos Humanos--");
-            RecursosHumano rrhh= new RecursosHumano();
-            rrhh.gestionRRHH();
+             RecursosHumano rrhh= new RecursosHumano();
+             rrhh.gestionRRHH();
         }
 
         
