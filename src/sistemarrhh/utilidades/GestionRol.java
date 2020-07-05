@@ -5,26 +5,22 @@
  */
 package sistemarrhh.utilidades;
 
-import static java.lang.System.exit;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import sistemapararrhh.Administrador;
-import sistemarrhh.entidades.Empleado;
 
 /**
  *
  * @author ortg_
  */
-public class GestionDepartamento {
+public class GestionRol {
 
     private Scanner sc = new Scanner(System.in);
     private byte flag;
     private byte decision = 0;
 
-    public void gestionDepto() throws ClassNotFoundException, SQLException {
+    public void gestionRol() throws ClassNotFoundException, SQLException {
 
         flag = 0; //variable que permite mostrar de nuevo el menu.
 
@@ -32,42 +28,34 @@ public class GestionDepartamento {
             byte decision2 = 0;
 
             System.out.println("\nSelecciona una opción del menu:");
-            System.out.println("1. Nuevo Departamento");
-            System.out.println("2. Editar Departamento");
-            System.out.println("3. Eliminar Departamento");
+            System.out.println("1. Nuevo Rol");
+            System.out.println("2. Editar Rol");
+            System.out.println("3. Eliminar Rol");
             System.out.println("4. Salir");
             decision2 = Byte.parseByte(sc.nextLine());
 
             //Validamos que el usuario seleccione una opcion valida 
             while (decision2 != 1 && decision2 != 2 && decision2 != 3 && decision2 != 4) {
                 System.out.println("\nSelecciona una opción del menu:");
-                System.out.println("1. Nuevo Departamento");
-                System.out.println("2. Editar Departamento");
-                System.out.println("3. Eliminar Departamento");
+                System.out.println("1. Nuevo Rol");
+                System.out.println("2. Editar Rol");
+                System.out.println("3. Eliminar Rol");
                 System.out.println("4. Salir");
                 decision = Byte.parseByte(sc.nextLine());
             }
 
             switch (decision2) { //Switch que controla el acceso a las opciones del menu
                 case 1:
-                    DepartamentoForm nuevoDepto = new DepartamentoForm();
-                     {
-                        try {
-                            nuevoDepto.nuevoDepto();
-                        } catch (SQLException ex) {
-                            Logger.getLogger(GestionDepartamento.class.getName()).log(Level.SEVERE, null, ex);
-                        } catch (ClassNotFoundException ex) {
-                            Logger.getLogger(GestionDepartamento.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
+                    RolForm nuevoRol = new RolForm();
+                    nuevoRol.nuevoRol();
                     break;
                 case 2:
-                        EditarDeptoForm edepto = new EditarDeptoForm();
-                        edepto.editarDepto();
+                   EditarRolForm eRol = new EditarRolForm();
+                   eRol.editarRol();
                     break;
                 case 3:
-                    EditarDeptoForm deleteDepto = new EditarDeptoForm();
-                    deleteDepto.eliminarDepto();
+                    EditarRolForm deleteRol = new EditarRolForm();
+                    deleteRol.elimarRol();
                     break;
                 case 4:
                     flag = 1;

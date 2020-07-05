@@ -33,7 +33,7 @@ public class Principal {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
         Scanner sc = new Scanner(System.in);
         byte decision = 0;
@@ -64,7 +64,7 @@ public class Principal {
             exit(0);
         }
 
-        /*
+        
         //Enviamos correo para doble factor de verificacion 
         EnviarCorreo correo = new EnviarCorreo(); //Instanciamos la clase EnviarCorreo
         num = FuncionCodAleatorio.getNumeroAleatorio(); //guardamos el numero aleatorio 
@@ -78,13 +78,19 @@ public class Principal {
         } else { //si no es el codigo se termina la sesion.
             System.out.println("Lo sentimos, No ingresaste el codigo correcto");
             exit(0); // Se termina la sesion 
-        }*/
+        }
+        
+        //SE presenta menu para administrador o rrhh
         System.out.println("\n-----BIENVENIDO AL SISTEMA DE RECURSOS HUMANOS-----\n");
 
+        //Se valida si es 1 quiere decir que es admon
         if (user2.getRolID() == 1) {
             System.out.println("\n--Usted posee un rol de Administrador--");
             Administrador admon = new Administrador();
             admon.gestionAdmon();
+            
+            
+            //Si es 2 quiere decir que es rol rrhh
         } else if (user2.getRolID() == 2) {
             System.out.println("\n--Usted posee un rol de Recursos Humanos--");
             RecursosHumano rrhh = new RecursosHumano();

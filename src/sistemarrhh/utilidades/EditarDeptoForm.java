@@ -19,7 +19,7 @@ import sistemarrhh.entidades.Departamento;
  */
 public class EditarDeptoForm {
 
-    public void editarDepto() {
+    public void editarDepto() throws ClassNotFoundException, SQLException {
 
         DepartamentoDao deptoDao = new DepartamentoDao();
         Departamento depto = new Departamento();
@@ -31,19 +31,14 @@ public class EditarDeptoForm {
             System.out.println("\n Ingrese el codigo de Departamento: ");
             cod = Integer.parseInt(sc.nextLine());
 
-            try {
-                depto = deptoDao.getByIDData(cod);
-                if (depto == null) {
-                    val = true;
-                    System.out.println("El ID no se encuentra en nuestros registros");
-                } else {
-                    val = false;
-                }
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(GestionEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
-                Logger.getLogger(GestionEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            depto = deptoDao.getByIDData(cod);
+            if (depto == null) {
+                val = true;
+                System.out.println("El ID no se encuentra en nuestros registros");
+            } else {
+                val = false;
             }
+
         }
 
         //Creando departamento
@@ -53,17 +48,13 @@ public class EditarDeptoForm {
         depto.setDpNombre(nombre);
 
         System.out.println("Modificando Departamento...");
-        try {
-            deptoDao.updateData(depto); //Se eejecuta el metodo insert que ejecuta el sql
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(EditarEmpleadoForm.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(EditarEmpleadoForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+        deptoDao.updateData(depto); //Se eejecuta el metodo insert que ejecuta el sql
+
         System.out.println("Datos del departamento actualizados exitosamente");
     }
 
-    public void eliminarDepto() {
+    public void eliminarDepto() throws ClassNotFoundException, SQLException {
 
         DepartamentoDao deptoDao = new DepartamentoDao();
         Departamento depto = new Departamento();
@@ -75,19 +66,14 @@ public class EditarDeptoForm {
             System.out.println("\n Ingrese el codigo de Departamento: ");
             cod = Integer.parseInt(sc.nextLine());
 
-            try {
-                depto = deptoDao.getByIDData(cod);
-                if (depto == null) {
-                    val = true;
-                    System.out.println("El ID no se encuentra en nuestros registros");
-                } else {
-                    val = false;
-                }
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(GestionEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
-                Logger.getLogger(GestionEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+            depto = deptoDao.getByIDData(cod);
+            if (depto == null) {
+                val = true;
+                System.out.println("El ID no se encuentra en nuestros registros");
+            } else {
+                val = false;
             }
+
         }
 
         byte d = 0;
@@ -96,14 +82,9 @@ public class EditarDeptoForm {
         System.out.println("\n1. SI  2.NO");
         d = Byte.parseByte(sc.nextLine());
         if (d == 1) {
-            try {
-                deptoDao.deleteData(depto.getDpID());
-                System.out.println("Se elimino el departamento con Exito");
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(GestionEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
-                Logger.getLogger(GestionEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            deptoDao.deleteData(depto.getDpID());
+            System.out.println("Se elimino el departamento con Exito");
+
         }
 
     }

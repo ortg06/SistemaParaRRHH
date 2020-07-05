@@ -5,6 +5,7 @@
  */
 package sistemapararrhh;
 
+import sistemarrhh.utilidades.GestionEstatus;
 import static java.lang.System.exit;
 import java.sql.SQLException;
 import java.util.List;
@@ -16,6 +17,7 @@ import sistemarrhh.utilidades.BuscarEmpleado;
 import sistemarrhh.utilidades.CargoForm;
 import sistemarrhh.utilidades.DepartamentoForm;
 import sistemarrhh.utilidades.GestionDepartamento;
+import sistemarrhh.utilidades.GestionRol;
 import sistemarrhh.utilidades.GestionUsuario;
 import sistemarrhh.utilidades.RegistroEmpleado;
 
@@ -29,7 +31,7 @@ public class Administrador {
     private byte flag;
     private byte decision = 0;
 
-    public void gestionAdmon() {
+    public void gestionAdmon() throws ClassNotFoundException, SQLException {
 
         flag = 0; //variable que permite mostrar de nuevo el menu.
 
@@ -60,16 +62,17 @@ public class Administrador {
                     GestionDepartamento gdepto = new GestionDepartamento();
                     gdepto.gestionDepto();
                     break;
-
                 case 2:
-
+                    GestionEstatus gstatus = new GestionEstatus();
+                    gstatus.gestionEstatus();
                     break;
                 case 3:
                     GestionUsuario gUsuario = new GestionUsuario();
                     gUsuario.gestionUsuario();
                     break;
                 case 4:
-
+                    GestionRol gRol = new GestionRol();
+                    gRol.gestionRol();
                     break;
                 case 5:
                     System.out.println("Adios...");
