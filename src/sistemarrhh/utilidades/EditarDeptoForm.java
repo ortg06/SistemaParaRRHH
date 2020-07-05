@@ -92,7 +92,7 @@ public class EditarDeptoForm {
 
         byte d = 0;
         System.out.println("\n ¿Esta seguro de Eliminar el departamento: "
-                + " " + depto.getDpNombre() +"?");
+                + " " + depto.getDpNombre() + "?");
         System.out.println("\n1. SI  2.NO");
         d = Byte.parseByte(sc.nextLine());
         if (d == 1) {

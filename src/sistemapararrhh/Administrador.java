@@ -16,6 +16,7 @@ import sistemarrhh.utilidades.BuscarEmpleado;
 import sistemarrhh.utilidades.CargoForm;
 import sistemarrhh.utilidades.DepartamentoForm;
 import sistemarrhh.utilidades.GestionDepartamento;
+import sistemarrhh.utilidades.GestionUsuario;
 import sistemarrhh.utilidades.RegistroEmpleado;
 
 /**
@@ -61,14 +62,14 @@ public class Administrador {
                     break;
 
                 case 2:
-                    
+
                     break;
                 case 3:
-                   
+                    GestionUsuario gUsuario = new GestionUsuario();
+                    gUsuario.gestionUsuario();
                     break;
-
                 case 4:
-                    
+
                     break;
                 case 5:
                     System.out.println("Adios...");
