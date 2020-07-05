@@ -70,7 +70,7 @@ public class EditarEmpleadoForm {
              
         System.out.println("Modificando Empleado...");
         try {
-            empleadoDao.updateData(em); //Se eejecuta el metodo insert que ejecuta el sql
+            empleadoDao.updateData(em); //Se eejecuta el metodo update que ejecuta el sql
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(EditarEmpleadoForm.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {

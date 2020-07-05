@@ -166,9 +166,7 @@ public class Empleado {
     public String toString() {
         return "Empleado{" + "noEmpleado=" + noEmpleado + ", nombre=" + nombre 
                 + ", apellido=" + apellido + ", fechaNacimiento=" + fechaNacimiento 
-                + ", fechaContrato=" + fechaContrato + ", usuarioModifica=" + usuarioModifica 
-                + ", usuarioCreacion=" + usuarioCreacion + ", fechaCreacion=" + fechaCreacion 
-                + ", fechaModificacion=" + fechaModificacion + ", dpID=" + dpID + ", superior=" 
+                + ", fechaContrato=" + fechaContrato + ", dpID=" + dpID + ", superior=" 
                 + superior + ", tpID=" + tpID + ", stId=" + stId + '}';
     }
 

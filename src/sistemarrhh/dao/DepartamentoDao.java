@@ -37,11 +37,11 @@ public class DepartamentoDao extends AbstractDao<Departamento>{
     protected void setMappingParamsToUpdate(PreparedStatement ps, Departamento entity) throws SQLException {
             ps.setInt(1, entity.getDpID());
             ps.setString(2, entity.getDpNombre());
-            ps.setString(3, entity.getUsuarioModifica());
-            ps.setString(4, entity.getUsuarioCreacion());
+            ps.setString(3, entity.getUsuarioCreacion());
+            ps.setString(4, entity.getUsuarioModifica());
             ps.setDate(5, entity.getFechaCreacion());
             ps.setDate(6, entity.getFechaModificacion());
-            ps.setInt(1, entity.getDpID());
+            ps.setInt(7, entity.getDpID());
     }
 
     @Override
@@ -51,7 +51,8 @@ public class DepartamentoDao extends AbstractDao<Departamento>{
 
     @Override
     protected String[] getTableColumns() {
-         String[] str = {"DP_ID","DP_NOMBRE",
+         String[] str = {"DP_ID",
+            "DP_NOMBRE",
             "A_USUARIO_MODIFICA",
             "A_USUARIO_CREACION",
             "A_FECHA_CREACION",

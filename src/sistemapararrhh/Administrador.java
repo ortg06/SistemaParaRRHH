@@ -15,6 +15,7 @@ import sistemarrhh.entidades.Empleado;
 import sistemarrhh.utilidades.BuscarEmpleado;
 import sistemarrhh.utilidades.CargoForm;
 import sistemarrhh.utilidades.DepartamentoForm;
+import sistemarrhh.utilidades.GestionDepartamento;
 import sistemarrhh.utilidades.RegistroEmpleado;
 
 /**
@@ -55,7 +56,8 @@ public class Administrador {
 
             switch (decision2) { //Switch que controla el acceso a las opciones del menu
                 case 1:
-                
+                    GestionDepartamento gdepto = new GestionDepartamento();
+                    gdepto.gestionDepto();
                     break;
 
                 case 2:
@@ -66,16 +68,7 @@ public class Administrador {
                     break;
 
                 case 4:
-                    DepartamentoForm nuevoDepto = new DepartamentoForm();
-                     {
-                        try {
-                            nuevoDepto.nuevoDepto();
-                        } catch (SQLException ex) {
-                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                        } catch (ClassNotFoundException ex) {
-                            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
+                    
                     break;
                 case 5:
                     System.out.println("Adios...");

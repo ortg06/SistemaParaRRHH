@@ -7,9 +7,12 @@ package sistemapararrhh;
 
 import static java.lang.System.exit;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import sistemarrhh.dao.EmpleadoDao;
+import sistemarrhh.entidades.Empleado;
 import sistemarrhh.utilidades.AsignarSalario;
 import sistemarrhh.utilidades.DepartamentoForm;
 import sistemarrhh.utilidades.GestionEmpleado;
@@ -27,6 +30,7 @@ public class RecursosHumano {
 
     public void gestionRRHH() {
 
+        EmpleadoDao empleadoDao = new EmpleadoDao();
         flag = 0; //variable que permite mostrar de nuevo el menu.
 
         while (flag == 0) {// while para controlar que se muestre el menu principal
@@ -46,7 +50,7 @@ public class RecursosHumano {
                 System.out.println("1. Nuevo Empleado");
                 System.out.println("2. Gestión por empleado");
                 System.out.println("3. Asignar Salario");
-                System.out.println("4. Planilla de Pagos");
+                System.out.println("4. Planilla de Empleados");
                 System.out.println("5. Salir");
                 decision = Byte.parseByte(sc.nextLine());
             }
@@ -59,9 +63,9 @@ public class RecursosHumano {
                         try {
                             rEmpleado.Registro();
                         } catch (SQLException ex) {
-                            Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(RecursosHumano.class.getName()).log(Level.SEVERE, null, ex);
                         } catch (ClassNotFoundException ex) {
-                            Logger.getLogger(Administrador.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(RecursosHumano.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
                     break;
@@ -82,11 +86,19 @@ public class RecursosHumano {
                 }
                     break;
                 case 4:
+                    try {
+                        List<Empleado> empleados = empleadoDao.getAllData();
+                        for (Empleado e : empleados) {
+                            System.out.println(e);
+                        }
+                       
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
 
                     break;
                 case 5:
-                    System.out.println("Adios...");
-                    exit(0); //Se termina la sesion del sistema
+                    flag = 1;
                     break;
             }
         }
