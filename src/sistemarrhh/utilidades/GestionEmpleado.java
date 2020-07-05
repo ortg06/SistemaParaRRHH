@@ -25,22 +25,30 @@ public class GestionEmpleado {
     private byte decision = 0;
 
     public void gestionEmpleado() {
-
-        int cod;
-
-        System.out.println("\n Ingrese el codigo de Empleado: ");
-        cod = Integer.parseInt(sc.nextLine());
+        
         EmpleadoDao empleadoDao = new EmpleadoDao();
         Empleado em = new Empleado();
-        
+        int cod;
+        boolean val=true;
+
+        while(val==true){
+        System.out.println("\n Ingrese el codigo de Empleado: ");
+        cod = Integer.parseInt(sc.nextLine());
+
         try {
             em = empleadoDao.getByIDData(cod);
+            if (em == null) {
+                val=true;
+                System.out.println("El ID no se encuentra en nuestros registros");
+            }else{
+                val=false;
+            }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(GestionEmpleado.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(GestionEmpleado.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        }
         
         flag = 0; //variable que permite mostrar de nuevo el menu.
         while (flag == 0) {// while para controlar que se muestre el menu principal
@@ -67,21 +75,21 @@ public class GestionEmpleado {
                     break;
 
                 case 2:
-                    byte d =0;
+                    byte d = 0;
                     System.out.println("\n ¿Esta seguro de Inactivar al Empleado: "
-                            + ""+em.getNombre()+" "+em.getApellido()+"?");
+                            + "" + em.getNombre() + " " + em.getApellido() + "?");
                     System.out.println("\n1. SI  2.NO");
-                    d=Byte.parseByte(sc.nextLine());
-                    if(d == 1){
-                    em.setStId(2);
-                try {
-                    empleadoDao.updateData(em);
-                    System.out.println("Se dio de baja el empleado con Exito");
-                } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(GestionEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (SQLException ex) {
-                    Logger.getLogger(GestionEmpleado.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                    d = Byte.parseByte(sc.nextLine());
+                    if (d == 1) {
+                        em.setStId(2);
+                        try {
+                            empleadoDao.updateData(em);
+                            System.out.println("Se dio de baja el empleado con Exito");
+                        } catch (ClassNotFoundException ex) {
+                            Logger.getLogger(GestionEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+                        } catch (SQLException ex) {
+                            Logger.getLogger(GestionEmpleado.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                     }
                     break;
                 case 3:

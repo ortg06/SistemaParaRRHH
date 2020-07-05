@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import sistemarrhh.utilidades.AsignarSalario;
 import sistemarrhh.utilidades.DepartamentoForm;
 import sistemarrhh.utilidades.GestionEmpleado;
 import sistemarrhh.utilidades.RegistroEmpleado;
@@ -44,7 +45,7 @@ public class RecursosHumano {
                 System.out.println("\nSelecciona una opción del menu:");
                 System.out.println("1. Nuevo Empleado");
                 System.out.println("2. Gestión por empleado");
-                System.out.println("3. Realizar Pagos");
+                System.out.println("3. Asignar Salario");
                 System.out.println("4. Planilla de Pagos");
                 System.out.println("5. Salir");
                 decision = Byte.parseByte(sc.nextLine());
@@ -69,9 +70,17 @@ public class RecursosHumano {
                     gEmpleado.gestionEmpleado();
                     break;
                 case 3:
-
+                    AsignarSalario aSalario = new AsignarSalario();
+                {
+                    try {
+                        aSalario.asignarSalario();
+                    } catch (ClassNotFoundException ex) {
+                        Logger.getLogger(RecursosHumano.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(RecursosHumano.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
                     break;
-
                 case 4:
 
                     break;

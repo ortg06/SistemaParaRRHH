@@ -63,7 +63,7 @@ public class RegistroEmpleado {
         
         //Insertamos el nuevo empleado en un nuevo objeto con cada parametro ingresado.
         Empleado nuevo = new Empleado(codigo, nombre, apellido, new Date(fn.getTimeInMillis()), new Date(fc.getTimeInMillis()),
-                 "Usuario", " ", new Date(gc.getTimeInMillis()), new Date(new GregorianCalendar().getTimeInMillis()), 
+                 " ", " ", new Date(gc.getTimeInMillis()), new Date(new GregorianCalendar().getTimeInMillis()), 
                 codSuperior, codDepto, codPuesto, codEstatus);
         System.out.println("Creando el empleado " + nuevo.getNombre()+nuevo.getApellido());
         empleadoDao.insertData(nuevo); //Se eejecuta el metodo insert que ejecuta el sql

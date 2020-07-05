@@ -5,7 +5,7 @@
  */
 package sistemarrhh.entidades;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -17,15 +17,35 @@ public class Salario {
     private double monto;
     private Date slFechaInicio;
     private Date slFechaFIN;
+    private String usuarioModifica;
+    private java.sql.Date fechaCreacion;
+    private String usuarioCreacion;
+    private java.sql.Date fechaModificacion;
+    private int noEmpleado;
 
     public Salario() {
     }
 
-    public Salario(int idSalarios, double monto, Date slFechaInicio, Date slFechaFIN) {
+    public Salario(int idSalarios, double monto, Date slFechaInicio, Date slFechaFIN, int noEmpleado) {
         this.idSalarios = idSalarios;
         this.monto = monto;
         this.slFechaInicio = slFechaInicio;
         this.slFechaFIN = slFechaFIN;
+        this.noEmpleado = noEmpleado;
+    }
+
+    
+    public Salario(int idSalarios, double monto, Date slFechaInicio, Date slFechaFIN, String usuarioModifica,
+            java.sql.Date fechaCreacion,String usuarioCreacion, java.sql.Date fechaModificacion, int noEmpleado) {
+        this.idSalarios = idSalarios;
+        this.monto = monto;
+        this.slFechaInicio = slFechaInicio;
+        this.slFechaFIN = slFechaFIN;
+        this.usuarioModifica = usuarioModifica;
+        this.usuarioCreacion = usuarioCreacion;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaModificacion = fechaModificacion;
+        this.noEmpleado = noEmpleado;
     }
 
     public int getIdSalarios() {
@@ -60,10 +80,48 @@ public class Salario {
         this.slFechaFIN = slFechaFIN;
     }
 
+    public String getUsuarioModifica() {
+        return usuarioModifica;
+    }
+
+    public void setUsuarioModifica(String usuarioModifica) {
+        this.usuarioModifica = usuarioModifica;
+    }
+
+    public String getUsuarioCreacion() {
+        return usuarioCreacion;
+    }
+
+    public void setUsuarioCreacion(String usuarioCreacion) {
+        this.usuarioCreacion = usuarioCreacion;
+    }
+
+    public java.sql.Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(java.sql.Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    public java.sql.Date getFechaModificacion() {
+        return fechaModificacion;
+    }
+
+    public void setFechaModificacion(java.sql.Date fechaModificacion) {
+        this.fechaModificacion = fechaModificacion;
+    }
+
+    public int getNoEmpleado() {
+        return noEmpleado;
+    }
+
+    public void setNoEmpleado(int noEmpleado) {
+        this.noEmpleado = noEmpleado;
+    }
+
     @Override
     public String toString() {
-        return "Salario{" + "idSalarios=" + idSalarios + ", salario=" + monto + ", slFechaInicio=" + slFechaInicio + ", slFechaFIN=" + slFechaFIN + '}';
+        return "Salario{" + "idSalarios=" + idSalarios + ", monto=" + monto + ", slFechaInicio=" + slFechaInicio + ", slFechaFIN=" + slFechaFIN + ", noEmpleado=" + noEmpleado + '}';
     }
-    
-    
 }
