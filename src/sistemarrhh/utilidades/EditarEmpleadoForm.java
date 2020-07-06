@@ -30,7 +30,7 @@ public class EditarEmpleadoForm {
         GregorianCalendar gc = new GregorianCalendar();
 
         
-        //Creando un empleado
+        //Formulario Editando un empleado
         System.out.println("---Formulario modificar datos de empleado-----");
         System.out.println("\nNombre Empleado:");
         String nombre = sc.nextLine();

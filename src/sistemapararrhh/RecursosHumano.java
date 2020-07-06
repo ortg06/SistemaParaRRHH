@@ -77,6 +77,7 @@ public class RecursosHumano {
                     AsignarSalario aSalario = new AsignarSalario();
                 {
                     try {
+                        //METODO PARA ASIGNAR SALARIO
                         aSalario.asignarSalario();
                     } catch (ClassNotFoundException ex) {
                         Logger.getLogger(RecursosHumano.class.getName()).log(Level.SEVERE, null, ex);
@@ -87,6 +88,7 @@ public class RecursosHumano {
                     break;
                 case 4:
                     try {
+                        //LISTA DE EMPLEADOS 
                         List<Empleado> empleados = empleadoDao.getAllData();
                         for (Empleado e : empleados) {
                             System.out.println(e);

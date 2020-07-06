@@ -41,7 +41,7 @@ public class EditarDeptoForm {
 
         }
 
-        //Creando departamento
+        //Editantdo  departamento
         System.out.println("---Formulario de modificacion de deptartamento-----");
         System.out.println("\nNombre depto:");
         String nombre = sc.nextLine();
@@ -54,6 +54,7 @@ public class EditarDeptoForm {
         System.out.println("Datos del departamento actualizados exitosamente");
     }
 
+    //metodo para eliminar depto
     public void eliminarDepto() throws ClassNotFoundException, SQLException {
 
         DepartamentoDao deptoDao = new DepartamentoDao();
@@ -82,7 +83,7 @@ public class EditarDeptoForm {
         System.out.println("\n1. SI  2.NO");
         d = Byte.parseByte(sc.nextLine());
         if (d == 1) {
-            deptoDao.deleteData(depto.getDpID());
+            deptoDao.deleteData(depto.getDpID());//se elimina el departamento
             System.out.println("Se elimino el departamento con Exito");
 
         }

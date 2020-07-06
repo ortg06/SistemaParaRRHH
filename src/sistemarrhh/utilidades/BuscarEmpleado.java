@@ -18,7 +18,7 @@ public class BuscarEmpleado {
     Scanner sc = new Scanner(System.in);
     EmpleadoDao empleadoDao = new EmpleadoDao();
     
-    
+    //Metodo para buscar empleado
     public void AccionEmpleado(){
         try{
                         System.out.println("\nDigite el ID del empleado a buscar: ");

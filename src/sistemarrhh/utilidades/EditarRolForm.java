@@ -26,6 +26,7 @@ public class EditarRolForm {
 
     public void editarRol() throws ClassNotFoundException, SQLException {
 
+        //se valida que el codigo este en departamento
         while (val == true) {
             System.out.println("\n Ingrese el codigo de Departamento: ");
             cod = Integer.parseInt(sc.nextLine());
@@ -69,6 +70,7 @@ public class EditarRolForm {
 
         }
 
+        //Se valida que la respuesta este entre si y no 
         byte d = 0;
         System.out.println("\n ¿Esta seguro de Eliminar el Rol "
                 + " " + rol.getRolNombre() + "?");

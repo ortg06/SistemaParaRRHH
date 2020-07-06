@@ -54,6 +54,7 @@ public class AsignarSalario {
             }
         }
 
+        //sE MOSTRARA EL FORMLARIO PARA ASIGNAR SALARIO
         System.out.println("\n Ingrese el codigo: ");
         int codigo = Integer.parseInt(sc.nextLine());
         System.out.println("\n Ingrese el salario: ");
@@ -73,7 +74,7 @@ public class AsignarSalario {
         System.out.println("\nIngrese Dia(DD):");
         ff.set(GregorianCalendar.DATE, Integer.parseInt(sc.nextLine()));
         
-        
+        //SE CREA NUEVO SALARIO CON LA ENTIDAD
        Salario nuevo = new Salario(codigo,salario,new Date(fi.getTimeInMillis()),
                new Date(ff.getTimeInMillis())," ",new Date(new GregorianCalendar().getTimeInMillis()),
                " ",new Date(new GregorianCalendar().getTimeInMillis()),em.getNoEmpleado()
